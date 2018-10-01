@@ -12,6 +12,7 @@ else{
 <html>
 <head>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="{{URL::asset('js/Menu.js')}}"></script>
     <script src="{{URL::asset('js/ajax.js')}}"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -101,7 +102,11 @@ else{
         </div>
     </div>
 
+<?php 
 
+var_dump(Session::all());
+
+?>
 
 
 

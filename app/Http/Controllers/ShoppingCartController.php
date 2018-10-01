@@ -9,12 +9,11 @@ class ShoppingCartController extends Controller
     public function AddToCart(Request $request)
     {
 
-		$data = $request->all(); 
-		$id = $request->id;
-		Session::put('cart', $data);	
-		return response()->json([
-    		'message' => ,
-		]);
+		$input = $request->input('id');
+		
+		$request->session()->put('cart', $input);
+
+        return response()->json(['success'=>'Got Simple Ajax Request.']);
         
 		
 	}}

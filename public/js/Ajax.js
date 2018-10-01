@@ -1,18 +1,16 @@
+
 $( document ).ready(function() {
 
-	$.ajaxSetup({
-	  headers: {
-	    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	  }
-	});
 
-	var id = 12; 
-		$.ajax({
-		    method: 'POST', 
-		    url: 'http://localhost:8000/add', 
-		    data: {'id' : id}, 
+	    $.ajax({
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            type:'POST',
+            url:'http://localhost:8000/add',
+ 			data: {
+              id: 4,
+            },
 		    success: function(response){ 
 		        console.log(response); 
 		    }
-		});
-	});
+        });
+});
