@@ -1,7 +1,7 @@
 
 $( document ).ready(function() {
 
-
+    $( "#AddToCart" ).click(function() {
 	    $.ajax({
             headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             type:'POST',
@@ -13,4 +13,5 @@ $( document ).ready(function() {
 		        console.log(response); 
 		    }
         });
+    });
 });
