@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ShoppingCartController extends Controller
 {
+	public function index()
+	{
+		return view ('Cart');
+	}
+
     public function AddToCart(Request $request)
     {
 
@@ -16,4 +21,5 @@ class ShoppingCartController extends Controller
         return response()->json(['success'=>'Got Simple Ajax Request.']);
         
 		
-	}}
+	}
+}

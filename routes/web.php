@@ -14,10 +14,10 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('/login','LoginController@index');
-
 Route::get('/admin', 'AdminController@index');
 
-Route::post('/add', 'ShoppingCartController@AddToCart');
+route::get('/cart', 'ShoppingCartController@index')->name('cart');
+route::post('/add', 'ShoppingCartController@AddToCart');
 
 Auth::routes();
 

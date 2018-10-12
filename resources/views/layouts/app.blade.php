@@ -13,8 +13,9 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="{{URL::asset('js/Menu.js')}}"></script>
-    <script src="{{URL::asset('js/ajax.js')}}"></script>
+    <script src="{{URL::asset('js/Javascript.js')}}"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -49,6 +50,7 @@
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                            <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -74,7 +76,11 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+
+
+
+
+            @yield('products')
         </main>
     </div>
 </body>
