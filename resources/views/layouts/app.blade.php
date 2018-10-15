@@ -15,7 +15,7 @@
     <script src="{{URL::asset('js/Menu.js')}}"></script>
     <script src="{{URL::asset('js/Javascript.js')}}"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -78,10 +78,15 @@
         <main class="py-4">
 
 
-
+            <?php
+ var_dump(Session::all());
+ ?>
 
             @yield('products')
         </main>
+    </div>
+
+    <div class="footer alert alert-danger" style="">
     </div>
 </body>
 </html>

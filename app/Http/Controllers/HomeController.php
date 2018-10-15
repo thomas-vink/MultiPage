@@ -13,7 +13,6 @@ class HomeController extends Controller
         $Products['Products'] = DB::table('products')->get();
         return view('Home',$Products);
 
-        
     }
     public function __construct()
     {

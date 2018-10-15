@@ -19,7 +19,6 @@ Route::get('/admin', 'AdminController@index');
 route::get('/cart', 'ShoppingCartController@index')->name('cart');
 route::post('/add', 'ShoppingCartController@AddToCart');
 
+route::get('/killsession', 'ShoppingCartController@killsession');
+
 Auth::routes();
-
-
-
