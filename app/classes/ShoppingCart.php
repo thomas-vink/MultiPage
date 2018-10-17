@@ -8,20 +8,24 @@ class ShoppingCart
 {
     public static function addToSession($id)
     {
-        Session::push('cart', $id);
+        $CurrentSession = session('cart');
+        $CurrentSessionAmount = $CurrentSession['amount'];
 
-
-
-        return response()->json([
-            'succes' => 'Succes',
-            'id' => $id,
-        ]);
-
-    }
-
-    public static function deleteFromSession()
-    {
-
+        if ($CurrentSession['id'] == $id) {
+            $newSessionAmount = $CurrentSessionAmount + 1;
+            $data1 = array(
+                'id' => $id,
+                'amount' => $newSessionAmount
+            );
+            session(['cart' => $CurrentSession, $data1]);
+        }
+        else{
+            $data2 = array(
+                'id' => $id,
+                'amount' => '1'
+            );
+            session(['cart' => $CurrentSession, $data2]);
+        }
     }
 
 }
