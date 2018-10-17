@@ -2,6 +2,7 @@
 @section('products')
   <div class="products">
   @foreach ($Products as $Product)
+    <form action="/add" class="form-group">
       <div class="card" >
           <img class="card-img-top" src="URL::asset(Assets/Products/Laptop_{{$Product->ProductID }}.jpg" alt="Card image cap">
         <div class="card-body">
@@ -10,6 +11,7 @@
           <p class="card-text">{{ $Product->Description }}</p>
         </div>
       </div>
+    </form>
   @endforeach
 </div>
 
