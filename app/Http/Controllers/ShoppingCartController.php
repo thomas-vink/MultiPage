@@ -24,6 +24,10 @@ class ShoppingCartController extends Controller
 
     }
 
+    public function GetFromCart(){
+        return ShoppingCart::GetFromSession();
+
+    }
     public function killsession(Request $request)
     {
         $request->session()->flush();

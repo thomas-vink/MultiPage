@@ -50,7 +50,7 @@
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
-                            <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></li>
+                            <li><a class="nav-link OpenCartModal" href="" data-toggle="modal" data-target="#CartModal">Cart</a></li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -76,18 +76,10 @@
         </nav>
 
         <main class="py-4">
-
-
-            <?php
- var_dump(Session::all());
- ?>
-
+            @yield('cart')
             @yield('products')
         </main>
     </div>
 
-    <div class="footer alert alert-danger" style="">
-      
-    </div>
 </body>
 </html>

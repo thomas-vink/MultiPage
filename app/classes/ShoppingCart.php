@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Session;
 
 class ShoppingCart
 {
+
     public static function addToSession($id)
     {
         $CurrentSession = session('cart');
@@ -17,15 +18,29 @@ class ShoppingCart
                 'id' => $id,
                 'amount' => $newSessionAmount
             );
-            session(['cart' => $CurrentSession, $data1]);
+            session(['cart' => $data1]);
         }
         else{
             $data2 = array(
                 'id' => $id,
                 'amount' => '1'
             );
-            session(['cart' => $CurrentSession, $data2]);
+            session(['cart' => $data2, $CurrentSession]);
         }
     }
+    public static function GetFromSession(){
+
+    $CartArray = array(
+        'id' => 'test1',
+        'test' => 'test2'
+    );
+
+        return response()->json([
+            $CartArray
+        ]);
+
+    }
+
+
 
 }

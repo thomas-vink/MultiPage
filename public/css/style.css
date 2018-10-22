@@ -14,6 +14,9 @@ body{
   position: absolute;
   margin-top: 100px;
 }
+.form-group{
+    float: left;
+}
 .container {
     width: calc(100vw - 100px); 
     margin-left:50px;

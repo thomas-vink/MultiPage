@@ -7,7 +7,7 @@ $( document ).ready(function() {
 	    $.ajax({
             headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             type:'POST',
-            url:'http://localhost:8000/add',
+            url:'http://localhost:8000/AddToCart',
  			data: {
               id: id,
             },
@@ -18,9 +18,23 @@ $( document ).ready(function() {
     });
 
 
+    $(".OpenCartModal").click(function() {
+        $.ajax({
+            type:'GET',
+            url:'http://localhost:8000/GetFromCart',
+            DataType: "html",
+            data: {
+            },
+            success: function(response){
+  
 
-    $('#myModal').on('shown.bs.modal', function () {
-      $('#myInput').trigger('focus')
-    })
+
+            }
+        });
+
+    });
+
+
+
 
 });
