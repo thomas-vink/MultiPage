@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\classes\ShoppingCart;
+use App\Products;
+
 
 class ShoppingCartController extends Controller
 {
     public function index()
     {
-        ShoppingCart::addToSession();
+        return ShoppingCart::GetFromSession();
+
 
     }
 

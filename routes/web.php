@@ -1,11 +1,13 @@
 <?php
 
 /*Returning Views*/
-Route::get('/', 'HomeController@index');
-route::get('/cart', 'ShoppingCartController@index')->name('cart');
+Route::get('/', 'HomeController@GetProducts');
+Route::get('/cart', 'ShoppingCartController@index')->name('cart');
+Route::get('/product/{id}','Homecontroller@GetDetails');
 
 
 /*Auth Functies*/
+
 Route::get('/login','LoginController@index');
 Route::get('/admin', 'AdminController@index');
 Auth::routes();

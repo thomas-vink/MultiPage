@@ -9,35 +9,17 @@ class ShoppingCart
 
     public static function addToSession($id)
     {
-        $CurrentSession = session('cart');
-        $CurrentSessionAmount = $CurrentSession['amount'];
-
-        if ($CurrentSession['id'] == $id) {
-            $newSessionAmount = $CurrentSessionAmount + 1;
-            $data1 = array(
-                'id' => $id,
-                'amount' => $newSessionAmount
-            );
-            session(['cart' => $data1]);
-        }
-        else{
-            $data2 = array(
-                'id' => $id,
-                'amount' => '1'
-            );
-            session(['cart' => $data2, $CurrentSession]);
-        }
+         $TestData = array(
+             'Product1'=>array('id'=>'1','amount'=>'3'),
+             'Product2'=>array('id'=>'2','amount'=>'2')
+         );
+        session(['cart' => $TestData]);
     }
     public static function GetFromSession(){
+        $currentSession = session('cart');
 
-    $CartArray = array(
-        'id' => 'test1',
-        'test' => 'test2'
-    );
 
-        return response()->json([
-            $CartArray
-        ]);
+        return View('Cart.index')->with('ShoppingCart', $currentSession);
 
     }
 

@@ -50,7 +50,7 @@
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
-                            <li><a class="nav-link OpenCartModal" href="" data-toggle="modal" data-target="#CartModal">Cart</a></li>
+                            <li><a class="nav-link" href="{{route('cart')}}">Cart</a></li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -76,8 +76,9 @@
         </nav>
 
         <main class="py-4">
-            @yield('cart')
             @yield('products')
+            @yield('cart')
+            @yield('content')
         </main>
     </div>
 
