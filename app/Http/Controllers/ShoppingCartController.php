@@ -19,6 +19,8 @@ class ShoppingCartController extends Controller
     public function AddToCart(Request $request)
     {
         $id = $request->input('id');
+
+
         return ShoppingCart::addToSession($id);
     }
 
@@ -28,7 +30,8 @@ class ShoppingCartController extends Controller
     }
 
     public function GetFromCart(){
-        return ShoppingCart::GetFromSession();
+
+        $oldcart = Session::get('cart');
 
     }
     public function killsession(Request $request)

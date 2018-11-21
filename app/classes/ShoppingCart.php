@@ -9,11 +9,11 @@ class ShoppingCart
 
     public static function addToSession($id)
     {
-         $TestData = array(
-             'Product1'=>array('id'=>'1','amount'=>'3'),
-             'Product2'=>array('id'=>'2','amount'=>'2')
-         );
-        session(['cart' => $TestData]);
+
+
+
+        session(['cart' => $Cart]);
+
     }
     public static function GetFromSession(){
         $currentSession = session('cart');
