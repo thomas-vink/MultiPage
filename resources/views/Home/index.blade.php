@@ -17,3 +17,8 @@
   @endforeach
 </div>
   @endsection
+@section('Footer')
+  <div class="footer">
+    {{$Products->links()}}
+  </div>
+@endsection

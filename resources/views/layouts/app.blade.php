@@ -79,6 +79,7 @@
             @yield('products')
             @yield('cart')
             @yield('content')
+            @yield('Footer')
         </main>
     </div>
 

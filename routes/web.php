@@ -14,8 +14,9 @@ Auth::routes();
 
 
 /*Cart AJAX Functies*/
-route::post('/AddToCart', 'ShoppingCartController@AddToCart');
-route::get('/GetFromCart', 'ShoppingCartController@GetFromCart');
+Route::post('/AddToCart', 'ShoppingCartController@AddToCart');
+Route::get('/GetFromCart', 'ShoppingCartController@GetFromCart');
+Route::post('/changeAmount/{id}', 'ShoppingCartController@ChangeAmount');
 
 /*Tijdelijk test functies*/
 route::get('/killsession', 'ShoppingCartController@killsession');

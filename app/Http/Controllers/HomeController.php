@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function GetProducts()
     {
-        $Products['Products'] = DB::table('products')->get();
+        $Products['Products'] = DB::table('products')->paginate(15);
         return view('Home.index',$Products);
 
     }

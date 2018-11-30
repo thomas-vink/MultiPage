@@ -29,7 +29,15 @@ class ShoppingCartController extends Controller
 
     }
 
-    public function GetFromCart(){
+    public function changeAmount(Request $request, $id){
+
+        $amount = $request->input('quantity');
+
+        return ShoppingCart::changeAmountClass($id, $amount);
+
+    }
+
+    public function getFromCart(){
 
         $oldcart = Session::get('cart');
 
