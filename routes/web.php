@@ -17,8 +17,13 @@ Auth::routes();
 Route::post('/AddToCart', 'ShoppingCartController@AddToCart');
 Route::get('/GetFromCart', 'ShoppingCartController@GetFromCart');
 Route::post('/changeAmount/{id}', 'ShoppingCartController@ChangeAmount');
+Route::get('/delete/{id}', 'ShoppingCartController@DeleteSession');
+
 
 /*Tijdelijk test functies*/
 route::get('/killsession', 'ShoppingCartController@killsession');
+
+
+Route::get('/save', 'ShoppingCartController@save');
 
 

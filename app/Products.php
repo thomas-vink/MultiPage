@@ -10,7 +10,7 @@ class Products extends Model
     //table name
     protected $table   = 'Products';
     //primary key
-    public $primaryKey = 'ProductID';
+    public $primaryKey = 'id';
 
 
 

@@ -12,39 +12,33 @@ class ShoppingCartController extends Controller
     public function index()
     {
         return ShoppingCart::GetFromSession();
-
-
     }
 
     public function AddToCart(Request $request)
     {
         $id = $request->input('id');
-
-
         return ShoppingCart::addToSession($id);
     }
 
-    public function DeleteFromCart()
+    public function DeleteSession($id)
     {
-
+        return ShoppingCart::DeleteFromSession($id);
     }
 
     public function changeAmount(Request $request, $id){
 
         $amount = $request->input('quantity');
-
-        return ShoppingCart::changeAmountClass($id, $amount);
-
+        return ShoppingCart::changeAmountSession($id, $amount);
     }
 
-    public function getFromCart(){
-
-        $oldcart = Session::get('cart');
-
-    }
     public function killsession(Request $request)
     {
         $request->session()->flush();
         return redirect('');
+    }
+
+    public function save()
+    {
+
     }
 }

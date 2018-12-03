@@ -36,9 +36,17 @@ class ShoppingCart
 
 
     }
+
+    public static function DeleteFromSession($id)
+    {
+        $currentCart = session('cart');
+        unset($currentCart[$id]);
+        session(['cart' => $currentCart]);
+        return redirect('/cart');
+    }
+
     public static function getFromSession()
     {
-
         $viewData = array();
         $currentSession = session('cart');
         if (isset($currentSession)) {
@@ -46,7 +54,9 @@ class ShoppingCart
                 $amount = $val;
                 $item = Products::find($key);
                 $item['amount'] = $amount;
+                $item['Price'] = $item['Price'] * $amount;
                 array_push($viewData, $item);
+
             }
         }
         else{
@@ -56,14 +66,16 @@ class ShoppingCart
 
     }
 
-    public static function changeAmountClass($id, $amount)
+    public static function changeAmountSession($id, $amount)
     {
         $currentSession = session('cart');
         if($currentSession[$id] == $amount){
             return redirect('/cart');
         }
         else{
-            dd($amount);
+            $currentSession[$id] = $amount;
+            session(['cart' => $currentSession]);
+            return redirect('/cart');
         }
     }
 

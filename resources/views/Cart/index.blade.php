@@ -13,9 +13,11 @@
                 <input type='number' value='{{$item->amount}}' name='quantity' min='0' max='99'>
                 <input type="submit" value="Submit">
             </form>
+            <button onclick="location.href='/delete/{{$item->ProductID}}'" type="button">Delete</button>
         </div>
         <hr>
     </div>
+    <button onclick="location.href='/save'" type="button">Koop</button>
 @endforeach
 
 @endsection
