@@ -69,6 +69,9 @@
                                     </form>
                                 </div>
                             </li>
+                            <li><a class="nav-link" href="{{route('cart')}}">Cart</a></li>
+                            <li><a class="nav-link" href="{{route('category')}}">Category</a></li>
+                            <li><a class="nav-link" href="{{route('orders')}}">orders</a></li>
                         @endguest
                     </ul>
                 </div>
@@ -76,10 +79,18 @@
         </nav>
 
         <main class="py-4">
-            @yield('products')
-            @yield('cart')
-            @yield('content')
-            @yield('Footer')
+            @guest
+                @yield('content')
+                @yield('Footer')
+                @yield('products')
+                @yield('category')
+            @else
+                @yield('cart')
+                @yield('content')
+                @yield('Footer')
+                @yield('products')
+                @yield('category')
+            @endguest
         </main>
     </div>
 

@@ -6,11 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable = [
-        'id'
-    ];
-    public function item()
-    {
-        return $this->hasMany(Item::class);
+    public function user(){
+        return $this->belongsTo('App\User');
     }
 }

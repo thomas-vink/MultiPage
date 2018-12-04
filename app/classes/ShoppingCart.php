@@ -56,7 +56,6 @@ class ShoppingCart
                 $item['amount'] = $amount;
                 $item['Price'] = $item['Price'] * $amount;
                 array_push($viewData, $item);
-
             }
         }
         else{

@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\classes\ShoppingCart;
 use App\Products;
+use App\Order;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class ShoppingCartController extends Controller
 {
     public function index()
     {
+        if(Auth::guest())
+        {
+            return redirect('/login');
+        }
         return ShoppingCart::GetFromSession();
     }
 
@@ -37,8 +44,5 @@ class ShoppingCartController extends Controller
         return redirect('');
     }
 
-    public function save()
-    {
 
-    }
 }

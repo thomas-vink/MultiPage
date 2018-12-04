@@ -3,7 +3,9 @@
 /*-------------------------------*/
 
 .products{
-    margin-left: 10%;
+    width: 77%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .card{
     width: 250px;
@@ -22,7 +24,18 @@
     color: #FFFFFF!important;
 }
 
-
+.ProductMenu{
+    width: 77%;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.pagination{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 /*-------------------------------*/
 /*          Details-Page         */
 /*-------------------------------*/
@@ -44,15 +57,6 @@
     width: 50%;
     float: left;
 
-}
-
-/*-------------------------------*/
-/*            Footer             */
-/*-------------------------------*/
-
-.footer {
-    position: fixed;
-    bottom:0;
 }
 
 /*-------------------------------*/
