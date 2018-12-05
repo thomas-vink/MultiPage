@@ -59,7 +59,7 @@ class ShoppingCart
             }
         }
         else{
-            die();
+            dd('cart bestaat niet');
         }
         return View('Cart.index', compact(['viewData','currentSession']));
 

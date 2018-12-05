@@ -34,14 +34,16 @@ class OrderController extends Controller
         return view('Orders.details',compact('ordersarray','Products'));
     }
 
-    public function save()
+    public function save(Request $request)
     {
         $cart = session('cart');
         try{
             $order = new Order();
             $order->cart = serialize($cart);
             Auth::user()->orders()->save($order);
+            $request->session()->forget('cart');
             return redirect('/');
+
         } catch (\Exception $error){
             return redirect()->route('checkout')->with('error',$error->getMessage());
         }

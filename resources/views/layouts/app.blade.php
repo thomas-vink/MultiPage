@@ -70,7 +70,6 @@
                                 </div>
                             </li>
                             <li><a class="nav-link" href="{{route('cart')}}">Cart</a></li>
-                            <li><a class="nav-link" href="{{route('category')}}">Category</a></li>
                             <li><a class="nav-link" href="{{route('orders')}}">orders</a></li>
                         @endguest
                     </ul>

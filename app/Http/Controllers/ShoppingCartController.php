@@ -17,8 +17,9 @@ class ShoppingCartController extends Controller
         if(Auth::guest())
         {
             return redirect('/login');
+        }else{
+            return ShoppingCart::GetFromSession();
         }
-        return ShoppingCart::GetFromSession();
     }
 
     public function AddToCart(Request $request)
